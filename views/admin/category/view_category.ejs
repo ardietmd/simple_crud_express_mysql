@@ -1,0 +1,21 @@
+<%- include('../../partials/header.ejs') %> 
+<div class="container-fluid">
+    <% if(msgSuccess) { %>
+        <input type="text" hidden value="Data berhasil ditambah" id="msgSuccess">
+    <% } %> 
+
+    <% if(msgDelete) { %>
+        <input type="text" hidden value="<%= msgDelete.value %>" id="msgDelete">
+    <% } %> 
+
+    <% if(msgUpdate) { %>
+        <input type="text" hidden value="<%= msgUpdate.value %>" id="msgUpdate">
+    <% } %> 
+
+    <h1 class="h3 mb-4 text-gray-800">Category</h1>
+    
+
+<%- include('table.ejs') %>
+<%- include('add_modal.ejs') %>
+</div>
+<%- include('../../partials/footer.ejs') %> 

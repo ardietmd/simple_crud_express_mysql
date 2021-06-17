@@ -1,0 +1,36 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Add
+  </button>
+<br></br>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Jenis Barang</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+              <% let number = 1; %>
+              <% categories.forEach(category => { %>
+                <tr>
+                    <td><%= number++ %></td>
+                    <td><%= category.nama %></td>
+                    <td><%= category.jenis %></td>
+                    <td class="text-center">
+                      <a href="/admin/category/<%= category.id %>" class="btn btn-primary" >Edit</a>
+                      <a href="/admin/category/delete/<%= category.id %>" class="btn btn-danger" >Delete</a>
+                    </td>
+                </tr>
+              <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
